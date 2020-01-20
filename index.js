@@ -19,10 +19,8 @@ $("#add").on("click", function(e) {
 });
 
 $("#shopList").on("click", ".check", function(e) {
-  let check = e.currentTarget;
-  if ($(check).prev()) {
-    return true;
-  }
+  var p = $(e.currentTarget).prev();
+  $(p).toggleClass("stroked");
 });
 
 $("#shopList").on("click", ".delete", function(e) {

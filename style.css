@@ -17,3 +17,6 @@
   justify-content: flex-start;
   padding-inline-start: 0px;
 }
+.stroked {
+  text-decoration: line-through;
+}
