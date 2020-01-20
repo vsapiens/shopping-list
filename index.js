@@ -1,5 +1,3 @@
-console.log("Connected...");
-
 $("#add").on("click", function(e) {
   e.preventDefault();
   let text = document.getElementById("input");
@@ -13,8 +11,21 @@ $("#add").on("click", function(e) {
   newDiv.setAttribute("class", "shopItem");
   newDiv.innerHTML = `
   <p class="heading"> ${text.value}</p>
-  <button type="submit"> check </button>
-   <button type="submit"> delete </button>`;
+  <button type="submit" class="check"> check </button>
+   <button type="submit" class="delete"> delete </button>`;
 
   list.appendChild(newDiv);
+  text.value = "";
+});
+
+$("#shopList").on("click", ".check", function(e) {
+  let check = e.currentTarget;
+  if ($(check).prev()) {
+    return true;
+  }
+});
+
+$("#shopList").on("click", ".delete", function(e) {
+  let div = $(e.currentTarget).parent();
+  div[0].parentNode.removeChild(div[0]);
 });
